@@ -2179,10 +2179,8 @@ async fn handle_runtime_command_if_needed(
                     reply_target,
                 ) {
                     Ok(req) => {
-                        ctx.approval_manager.record_non_cli_pending_resolution(
-                            &request_id,
-                            ApprovalResponse::Yes,
-                        );
+                        ctx.approval_manager
+                            .record_non_cli_pending_resolution(&request_id, ApprovalResponse::Yes);
                         let tool_name = req.tool_name;
                         let mut approval_message = if tool_name == APPROVAL_ALL_TOOLS_ONCE_TOKEN {
                             let remaining = ctx.approval_manager.grant_non_cli_allow_all_once();
@@ -2301,10 +2299,8 @@ async fn handle_runtime_command_if_needed(
                     reply_target,
                 ) {
                     Ok(req) => {
-                        ctx.approval_manager.record_non_cli_pending_resolution(
-                            &request_id,
-                            ApprovalResponse::No,
-                        );
+                        ctx.approval_manager
+                            .record_non_cli_pending_resolution(&request_id, ApprovalResponse::No);
                         runtime_trace::record_event(
                             "approval_request_rejected",
                             Some(source_channel),
