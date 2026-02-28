@@ -40,6 +40,7 @@ Last refreshed: **February 25, 2026**.
 ### 2) Command/Config References & Integrations
 
 - [reference/README.md](reference/README.md)
+- [architecture.md](architecture.md)
 - [commands-reference.md](commands-reference.md)
 - [cron-scheduling.md](cron-scheduling.md)
 - [providers-reference.md](providers-reference.md)
