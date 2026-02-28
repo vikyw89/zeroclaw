@@ -4,8 +4,9 @@
 //! the ClawWork LiveBench economic model. Persists state to JSONL files.
 
 use super::costs::{
-    ApiCallRecord, ApiUsageSummary, BalanceRecord, CostBreakdown, LlmCallRecord, LlmUsageSummary,
-    PricingModel, TaskCompletionRecord, TaskCostRecord, TokenPricing, WorkIncomeRecord,
+    ApiCallRecord, BalanceRecord, CostBreakdown, LlmCallRecord, LlmUsageSummary,
+    ApiUsageSummary, PricingModel, TaskCompletionRecord, TaskCostRecord, TokenPricing,
+    WorkIncomeRecord,
 };
 use super::status::SurvivalStatus;
 use anyhow::{Context, Result};
@@ -174,8 +175,9 @@ impl EconomicTracker {
         data_path: Option<PathBuf>,
     ) -> Self {
         let signature = signature.into();
-        let data_path = data_path
-            .unwrap_or_else(|| PathBuf::from(format!("./data/agent_data/{}/economic", signature)));
+        let data_path = data_path.unwrap_or_else(|| {
+            PathBuf::from(format!("./data/agent_data/{}/economic", signature))
+        });
 
         Self {
             signature,
@@ -197,10 +199,7 @@ impl EconomicTracker {
     /// Initialize the tracker, loading existing state or creating new.
     pub fn initialize(&self) -> Result<()> {
         fs::create_dir_all(&self.data_path).with_context(|| {
-            format!(
-                "Failed to create data directory: {}",
-                self.data_path.display()
-            )
+            format!("Failed to create data directory: {}", self.data_path.display())
         })?;
 
         let balance_file = self.balance_file_path();
@@ -215,7 +214,14 @@ impl EconomicTracker {
                 self.get_survival_status_inner(&state)
             );
         } else {
-            self.save_balance_record("initialization", 0.0, 0.0, 0.0, Vec::new(), false)?;
+            self.save_balance_record(
+                "initialization",
+                0.0,
+                0.0,
+                0.0,
+                Vec::new(),
+                false,
+            )?;
             tracing::info!(
                 "✅ Initialized economic tracker for {}: starting balance=${:.2}",
                 self.signature,
@@ -279,9 +285,7 @@ impl EconomicTracker {
     ) -> f64 {
         let api_name = api_name.into();
         let cost = cost.unwrap_or_else(|| {
-            self.config
-                .token_pricing
-                .calculate_cost(input_tokens, output_tokens)
+            self.config.token_pricing.calculate_cost(input_tokens, output_tokens)
         });
 
         let mut state = self.state.lock();
@@ -327,13 +331,7 @@ impl EconomicTracker {
         let api_name = api_name.into();
         let cost = (tokens as f64 / 1_000_000.0) * price_per_million;
 
-        self.record_api_cost(
-            &api_name,
-            cost,
-            Some(tokens),
-            Some(price_per_million),
-            PricingModel::PerToken,
-        );
+        self.record_api_cost(&api_name, cost, Some(tokens), Some(price_per_million), PricingModel::PerToken);
 
         cost
     }
@@ -368,10 +366,7 @@ impl EconomicTracker {
 
         // Categorize by API type
         let api_lower = api_name.to_lowercase();
-        if api_lower.contains("search")
-            || api_lower.contains("jina")
-            || api_lower.contains("tavily")
-        {
+        if api_lower.contains("search") || api_lower.contains("jina") || api_lower.contains("tavily") {
             state.task.costs.search_api += cost;
         } else if api_lower.contains("ocr") {
             state.task.costs.ocr_api += cost;
@@ -579,9 +574,9 @@ impl EconomicTracker {
         date: Option<String>,
     ) -> Result<()> {
         let task_id = task_id.into();
-        let date = date
-            .or_else(|| self.state.lock().task.task_date.clone())
-            .unwrap_or_else(|| Utc::now().format("%Y-%m-%d").to_string());
+        let date = date.or_else(|| {
+            self.state.lock().task.task_date.clone()
+        }).unwrap_or_else(|| Utc::now().format("%Y-%m-%d").to_string());
 
         let record = TaskCompletionRecord {
             task_id: task_id.clone(),
@@ -674,27 +669,17 @@ impl EconomicTracker {
         let total_output = state.task.llm_calls.iter().map(|c| c.output_tokens).sum();
         let llm_call_count = state.task.llm_calls.len();
 
-        let token_based = state
-            .task
-            .api_calls
-            .iter()
+        let token_based = state.task.api_calls.iter()
             .filter(|c| c.pricing_model == PricingModel::PerToken)
             .count();
-        let flat_rate = state
-            .task
-            .api_calls
-            .iter()
+        let flat_rate = state.task.api_calls.iter()
             .filter(|c| c.pricing_model == PricingModel::FlatRate)
             .count();
 
         let record = TaskCostRecord {
             timestamp_end: Utc::now(),
             timestamp_start: state.task.start_time.unwrap_or_else(Utc::now),
-            date: state
-                .task
-                .task_date
-                .clone()
-                .unwrap_or_else(|| Utc::now().format("%Y-%m-%d").to_string()),
+            date: state.task.task_date.clone().unwrap_or_else(|| Utc::now().format("%Y-%m-%d").to_string()),
             task_id: task_id.clone(),
             llm_usage: LlmUsageSummary {
                 total_calls: llm_call_count,
@@ -788,10 +773,7 @@ impl EconomicTracker {
 
         let record = WorkIncomeRecord {
             timestamp: Utc::now(),
-            date: state
-                .task
-                .task_date
-                .clone()
+            date: state.task.task_date.clone()
                 .unwrap_or_else(|| Utc::now().format("%Y-%m-%d").to_string()),
             task_id: task_id.to_string(),
             base_amount,
@@ -869,7 +851,11 @@ mod tests {
     fn tracker_initialization() {
         let tmp = TempDir::new().unwrap();
         let config = test_config();
-        let tracker = EconomicTracker::new("test-agent", config, Some(tmp.path().to_path_buf()));
+        let tracker = EconomicTracker::new(
+            "test-agent",
+            config,
+            Some(tmp.path().to_path_buf()),
+        );
 
         tracker.initialize().unwrap();
 
@@ -880,8 +866,11 @@ mod tests {
     #[test]
     fn track_tokens_reduces_balance() {
         let tmp = TempDir::new().unwrap();
-        let tracker =
-            EconomicTracker::new("test-agent", test_config(), Some(tmp.path().to_path_buf()));
+        let tracker = EconomicTracker::new(
+            "test-agent",
+            test_config(),
+            Some(tmp.path().to_path_buf()),
+        );
         tracker.initialize().unwrap();
 
         tracker.start_task("task-1", None);
@@ -896,8 +885,11 @@ mod tests {
     #[test]
     fn work_income_with_threshold() {
         let tmp = TempDir::new().unwrap();
-        let tracker =
-            EconomicTracker::new("test-agent", test_config(), Some(tmp.path().to_path_buf()));
+        let tracker = EconomicTracker::new(
+            "test-agent",
+            test_config(),
+            Some(tmp.path().to_path_buf()),
+        );
         tracker.initialize().unwrap();
 
         // Below threshold - no payment
@@ -917,7 +909,11 @@ mod tests {
         let mut config = test_config();
         config.initial_balance = 100.0;
 
-        let tracker = EconomicTracker::new("test-agent", config, Some(tmp.path().to_path_buf()));
+        let tracker = EconomicTracker::new(
+            "test-agent",
+            config,
+            Some(tmp.path().to_path_buf()),
+        );
         tracker.initialize().unwrap();
 
         assert_eq!(tracker.get_survival_status(), SurvivalStatus::Thriving);
@@ -947,19 +943,23 @@ mod tests {
 
         // Create tracker, do some work, save state
         {
-            let tracker =
-                EconomicTracker::new("test-agent", config.clone(), Some(tmp.path().to_path_buf()));
+            let tracker = EconomicTracker::new(
+                "test-agent",
+                config.clone(),
+                Some(tmp.path().to_path_buf()),
+            );
             tracker.initialize().unwrap();
             tracker.track_tokens(1000, 500, "agent", Some(10.0));
-            tracker
-                .save_daily_state("2025-01-01", 0.0, 0.0, vec![], false)
-                .unwrap();
+            tracker.save_daily_state("2025-01-01", 0.0, 0.0, vec![], false).unwrap();
         }
 
         // Create new tracker, should load state
         {
-            let tracker =
-                EconomicTracker::new("test-agent", config, Some(tmp.path().to_path_buf()));
+            let tracker = EconomicTracker::new(
+                "test-agent",
+                config,
+                Some(tmp.path().to_path_buf()),
+            );
             tracker.initialize().unwrap();
             assert!((tracker.get_balance() - 990.0).abs() < 0.01);
         }
@@ -968,8 +968,11 @@ mod tests {
     #[test]
     fn api_call_categorization() {
         let tmp = TempDir::new().unwrap();
-        let tracker =
-            EconomicTracker::new("test-agent", test_config(), Some(tmp.path().to_path_buf()));
+        let tracker = EconomicTracker::new(
+            "test-agent",
+            test_config(),
+            Some(tmp.path().to_path_buf()),
+        );
         tracker.initialize().unwrap();
 
         tracker.start_task("task-1", None);

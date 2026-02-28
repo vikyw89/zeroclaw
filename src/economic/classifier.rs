@@ -124,23 +124,9 @@ impl TaskClassifier {
                 hourly_wage: 69.50,
                 category: TechnologyEngineering,
                 keywords: vec![
-                    "software",
-                    "code",
-                    "programming",
-                    "developer",
-                    "rust",
-                    "python",
-                    "javascript",
-                    "api",
-                    "backend",
-                    "frontend",
-                    "fullstack",
-                    "app",
-                    "application",
-                    "debug",
-                    "refactor",
-                    "implement",
-                    "algorithm",
+                    "software", "code", "programming", "developer", "rust", "python",
+                    "javascript", "api", "backend", "frontend", "fullstack", "app",
+                    "application", "debug", "refactor", "implement", "algorithm",
                 ],
             },
             Occupation {
@@ -148,16 +134,8 @@ impl TaskClassifier {
                 hourly_wage: 90.38,
                 category: TechnologyEngineering,
                 keywords: vec![
-                    "it manager",
-                    "cto",
-                    "tech lead",
-                    "infrastructure",
-                    "systems",
-                    "devops",
-                    "cloud",
-                    "architecture",
-                    "platform",
-                    "enterprise",
+                    "it manager", "cto", "tech lead", "infrastructure", "systems",
+                    "devops", "cloud", "architecture", "platform", "enterprise",
                 ],
             },
             Occupation {
@@ -165,15 +143,8 @@ impl TaskClassifier {
                 hourly_wage: 51.87,
                 category: TechnologyEngineering,
                 keywords: vec![
-                    "industrial",
-                    "process",
-                    "optimization",
-                    "efficiency",
-                    "workflow",
-                    "manufacturing",
-                    "lean",
-                    "six sigma",
-                    "production",
+                    "industrial", "process", "optimization", "efficiency", "workflow",
+                    "manufacturing", "lean", "six sigma", "production",
                 ],
             },
             Occupation {
@@ -181,14 +152,8 @@ impl TaskClassifier {
                 hourly_wage: 52.92,
                 category: TechnologyEngineering,
                 keywords: vec![
-                    "mechanical",
-                    "cad",
-                    "solidworks",
-                    "machinery",
-                    "thermal",
-                    "hvac",
-                    "automotive",
-                    "robotics",
+                    "mechanical", "cad", "solidworks", "machinery", "thermal",
+                    "hvac", "automotive", "robotics",
                 ],
             },
             // Business & Finance
@@ -197,15 +162,8 @@ impl TaskClassifier {
                 hourly_wage: 44.96,
                 category: BusinessFinance,
                 keywords: vec![
-                    "accounting",
-                    "audit",
-                    "tax",
-                    "bookkeeping",
-                    "financial statements",
-                    "gaap",
-                    "ledger",
-                    "reconciliation",
-                    "cpa",
+                    "accounting", "audit", "tax", "bookkeeping", "financial statements",
+                    "gaap", "ledger", "reconciliation", "cpa",
                 ],
             },
             Occupation {
@@ -213,12 +171,8 @@ impl TaskClassifier {
                 hourly_wage: 60.59,
                 category: BusinessFinance,
                 keywords: vec![
-                    "administrative",
-                    "office manager",
-                    "facilities",
-                    "operations",
-                    "scheduling",
-                    "coordination",
+                    "administrative", "office manager", "facilities", "operations",
+                    "scheduling", "coordination",
                 ],
             },
             Occupation {
@@ -226,13 +180,8 @@ impl TaskClassifier {
                 hourly_wage: 39.29,
                 category: BusinessFinance,
                 keywords: vec![
-                    "procurement",
-                    "purchasing",
-                    "vendor",
-                    "supplier",
-                    "sourcing",
-                    "negotiation",
-                    "contracts",
+                    "procurement", "purchasing", "vendor", "supplier", "sourcing",
+                    "negotiation", "contracts",
                 ],
             },
             Occupation {
@@ -240,14 +189,8 @@ impl TaskClassifier {
                 hourly_wage: 40.86,
                 category: BusinessFinance,
                 keywords: vec![
-                    "compliance",
-                    "regulatory",
-                    "audit",
-                    "policy",
-                    "governance",
-                    "risk",
-                    "sox",
-                    "gdpr",
+                    "compliance", "regulatory", "audit", "policy", "governance",
+                    "risk", "sox", "gdpr",
                 ],
             },
             Occupation {
@@ -255,11 +198,7 @@ impl TaskClassifier {
                 hourly_wage: 86.76,
                 category: BusinessFinance,
                 keywords: vec![
-                    "cfo",
-                    "finance director",
-                    "treasury",
-                    "budget",
-                    "financial planning",
+                    "cfo", "finance director", "treasury", "budget", "financial planning",
                     "investment management",
                 ],
             },
@@ -268,15 +207,8 @@ impl TaskClassifier {
                 hourly_wage: 56.01,
                 category: BusinessFinance,
                 keywords: vec![
-                    "financial analysis",
-                    "investment",
-                    "portfolio",
-                    "stock",
-                    "equity",
-                    "valuation",
-                    "modeling",
-                    "dcf",
-                    "market research",
+                    "financial analysis", "investment", "portfolio", "stock", "equity",
+                    "valuation", "modeling", "dcf", "market research",
                 ],
             },
             Occupation {
@@ -284,14 +216,8 @@ impl TaskClassifier {
                 hourly_wage: 64.00,
                 category: BusinessFinance,
                 keywords: vec![
-                    "operations",
-                    "general manager",
-                    "director",
-                    "oversee",
-                    "manage",
-                    "strategy",
-                    "leadership",
-                    "business",
+                    "operations", "general manager", "director", "oversee", "manage",
+                    "strategy", "leadership", "business",
                 ],
             },
             Occupation {
@@ -299,15 +225,8 @@ impl TaskClassifier {
                 hourly_wage: 41.58,
                 category: BusinessFinance,
                 keywords: vec![
-                    "market research",
-                    "marketing",
-                    "campaign",
-                    "branding",
-                    "seo",
-                    "advertising",
-                    "analytics",
-                    "customer",
-                    "segment",
+                    "market research", "marketing", "campaign", "branding", "seo",
+                    "advertising", "analytics", "customer", "segment",
                 ],
             },
             Occupation {
@@ -315,13 +234,8 @@ impl TaskClassifier {
                 hourly_wage: 77.02,
                 category: BusinessFinance,
                 keywords: vec![
-                    "financial advisor",
-                    "wealth",
-                    "retirement",
-                    "401k",
-                    "ira",
-                    "estate planning",
-                    "insurance",
+                    "financial advisor", "wealth", "retirement", "401k", "ira",
+                    "estate planning", "insurance",
                 ],
             },
             Occupation {
@@ -329,15 +243,8 @@ impl TaskClassifier {
                 hourly_wage: 51.97,
                 category: BusinessFinance,
                 keywords: vec![
-                    "project manager",
-                    "pmp",
-                    "agile",
-                    "scrum",
-                    "sprint",
-                    "milestone",
-                    "timeline",
-                    "stakeholder",
-                    "deliverable",
+                    "project manager", "pmp", "agile", "scrum", "sprint", "milestone",
+                    "timeline", "stakeholder", "deliverable",
                 ],
             },
             Occupation {
@@ -345,13 +252,8 @@ impl TaskClassifier {
                 hourly_wage: 39.77,
                 category: BusinessFinance,
                 keywords: vec![
-                    "property",
-                    "real estate",
-                    "landlord",
-                    "tenant",
-                    "lease",
-                    "hoa",
-                    "community",
+                    "property", "real estate", "landlord", "tenant", "lease",
+                    "hoa", "community",
                 ],
             },
             Occupation {
@@ -359,61 +261,57 @@ impl TaskClassifier {
                 hourly_wage: 77.37,
                 category: BusinessFinance,
                 keywords: vec![
-                    "sales manager",
-                    "revenue",
-                    "quota",
-                    "pipeline",
-                    "crm",
-                    "account executive",
-                    "territory",
+                    "sales manager", "revenue", "quota", "pipeline", "crm",
+                    "account executive", "territory",
                 ],
             },
             Occupation {
                 name: "Marketing and Sales Managers".into(),
                 hourly_wage: 79.35,
                 category: BusinessFinance,
-                keywords: vec!["vp sales", "cmo", "growth", "go-to-market", "demand gen"],
+                keywords: vec![
+                    "vp sales", "cmo", "growth", "go-to-market", "demand gen",
+                ],
             },
             Occupation {
                 name: "Financial Specialists".into(),
                 hourly_wage: 48.12,
                 category: BusinessFinance,
-                keywords: vec!["financial specialist", "credit", "loan", "underwriting"],
+                keywords: vec![
+                    "financial specialist", "credit", "loan", "underwriting",
+                ],
             },
             Occupation {
                 name: "Securities, Commodities, and Financial Services Sales Agents".into(),
                 hourly_wage: 48.12,
                 category: BusinessFinance,
-                keywords: vec!["broker", "securities", "commodities", "trading", "series 7"],
+                keywords: vec![
+                    "broker", "securities", "commodities", "trading", "series 7",
+                ],
             },
             Occupation {
                 name: "Business Operations Specialists, All Other".into(),
                 hourly_wage: 44.41,
                 category: BusinessFinance,
                 keywords: vec![
-                    "business analyst",
-                    "operations specialist",
-                    "process improvement",
+                    "business analyst", "operations specialist", "process improvement",
                 ],
             },
             Occupation {
                 name: "Claims Adjusters, Examiners, and Investigators".into(),
                 hourly_wage: 37.87,
                 category: BusinessFinance,
-                keywords: vec!["claims", "insurance", "adjuster", "investigator", "fraud"],
+                keywords: vec![
+                    "claims", "insurance", "adjuster", "investigator", "fraud",
+                ],
             },
             Occupation {
                 name: "Transportation, Storage, and Distribution Managers".into(),
                 hourly_wage: 55.77,
                 category: BusinessFinance,
                 keywords: vec![
-                    "logistics",
-                    "supply chain",
-                    "warehouse",
-                    "distribution",
-                    "shipping",
-                    "inventory",
-                    "fulfillment",
+                    "logistics", "supply chain", "warehouse", "distribution", "shipping",
+                    "inventory", "fulfillment",
                 ],
             },
             Occupation {
@@ -421,22 +319,24 @@ impl TaskClassifier {
                 hourly_wage: 62.11,
                 category: BusinessFinance,
                 keywords: vec![
-                    "production manager",
-                    "plant manager",
-                    "manufacturing operations",
+                    "production manager", "plant manager", "manufacturing operations",
                 ],
             },
             Occupation {
                 name: "Lodging Managers".into(),
                 hourly_wage: 37.24,
                 category: BusinessFinance,
-                keywords: vec!["hotel", "hospitality", "lodging", "resort", "concierge"],
+                keywords: vec![
+                    "hotel", "hospitality", "lodging", "resort", "concierge",
+                ],
             },
             Occupation {
                 name: "Real Estate Brokers".into(),
                 hourly_wage: 39.77,
                 category: BusinessFinance,
-                keywords: vec!["real estate broker", "realtor", "mls", "listing"],
+                keywords: vec![
+                    "real estate broker", "realtor", "mls", "listing",
+                ],
             },
             Occupation {
                 name: "Managers, All Other".into(),
@@ -450,13 +350,8 @@ impl TaskClassifier {
                 hourly_wage: 66.22,
                 category: HealthcareSocialServices,
                 keywords: vec![
-                    "healthcare",
-                    "hospital",
-                    "clinic",
-                    "medical",
-                    "health services",
-                    "patient",
-                    "hipaa",
+                    "healthcare", "hospital", "clinic", "medical", "health services",
+                    "patient", "hipaa",
                 ],
             },
             Occupation {
@@ -464,12 +359,8 @@ impl TaskClassifier {
                 hourly_wage: 41.39,
                 category: HealthcareSocialServices,
                 keywords: vec![
-                    "social services",
-                    "community",
-                    "nonprofit",
-                    "outreach",
-                    "case management",
-                    "welfare",
+                    "social services", "community", "nonprofit", "outreach",
+                    "case management", "welfare",
                 ],
             },
             Occupation {
@@ -477,10 +368,7 @@ impl TaskClassifier {
                 hourly_wage: 41.39,
                 category: HealthcareSocialServices,
                 keywords: vec![
-                    "social worker",
-                    "child welfare",
-                    "family services",
-                    "school counselor",
+                    "social worker", "child welfare", "family services", "school counselor",
                 ],
             },
             Occupation {
@@ -499,23 +387,14 @@ impl TaskClassifier {
                 name: "Pharmacists".into(),
                 hourly_wage: 66.22,
                 category: HealthcareSocialServices,
-                keywords: vec![
-                    "pharmacy",
-                    "pharmacist",
-                    "medication",
-                    "prescription",
-                    "drug",
-                ],
+                keywords: vec!["pharmacy", "pharmacist", "medication", "prescription", "drug"],
             },
             Occupation {
                 name: "Medical Secretaries and Administrative Assistants".into(),
                 hourly_wage: 66.22,
                 category: HealthcareSocialServices,
                 keywords: vec![
-                    "medical secretary",
-                    "medical records",
-                    "ehr",
-                    "scheduling appointments",
+                    "medical secretary", "medical records", "ehr", "scheduling appointments",
                 ],
             },
             // Legal, Media & Operations
@@ -524,14 +403,8 @@ impl TaskClassifier {
                 hourly_wage: 44.41,
                 category: LegalMediaOperations,
                 keywords: vec![
-                    "lawyer",
-                    "attorney",
-                    "legal",
-                    "contract",
-                    "litigation",
-                    "counsel",
-                    "law",
-                    "paralegal",
+                    "lawyer", "attorney", "legal", "contract", "litigation",
+                    "counsel", "law", "paralegal",
                 ],
             },
             Occupation {
@@ -539,11 +412,7 @@ impl TaskClassifier {
                 hourly_wage: 72.06,
                 category: LegalMediaOperations,
                 keywords: vec![
-                    "editor",
-                    "editing",
-                    "proofread",
-                    "copy edit",
-                    "manuscript",
+                    "editor", "editing", "proofread", "copy edit", "manuscript",
                     "publication",
                 ],
             },
@@ -552,11 +421,7 @@ impl TaskClassifier {
                 hourly_wage: 68.15,
                 category: LegalMediaOperations,
                 keywords: vec![
-                    "video editor",
-                    "film",
-                    "premiere",
-                    "final cut",
-                    "davinci",
+                    "video editor", "film", "premiere", "final cut", "davinci",
                     "post-production",
                 ],
             },
@@ -565,12 +430,7 @@ impl TaskClassifier {
                 hourly_wage: 41.86,
                 category: LegalMediaOperations,
                 keywords: vec![
-                    "audio",
-                    "video",
-                    "av",
-                    "broadcast",
-                    "streaming",
-                    "recording",
+                    "audio", "video", "av", "broadcast", "streaming", "recording",
                 ],
             },
             Occupation {
@@ -578,12 +438,8 @@ impl TaskClassifier {
                 hourly_wage: 41.86,
                 category: LegalMediaOperations,
                 keywords: vec![
-                    "producer",
-                    "director",
-                    "production",
-                    "creative director",
-                    "content",
-                    "show",
+                    "producer", "director", "production", "creative director",
+                    "content", "show",
                 ],
             },
             Occupation {
@@ -591,20 +447,17 @@ impl TaskClassifier {
                 hourly_wage: 68.15,
                 category: LegalMediaOperations,
                 keywords: vec![
-                    "journalist",
-                    "reporter",
-                    "news",
-                    "article",
-                    "press",
-                    "interview",
-                    "story",
+                    "journalist", "reporter", "news", "article", "press",
+                    "interview", "story",
                 ],
             },
             Occupation {
                 name: "Entertainment and Recreation Managers, Except Gambling".into(),
                 hourly_wage: 41.86,
                 category: LegalMediaOperations,
-                keywords: vec!["entertainment", "recreation", "event", "venue", "concert"],
+                keywords: vec![
+                    "entertainment", "recreation", "event", "venue", "concert",
+                ],
             },
             Occupation {
                 name: "Recreation Workers".into(),
@@ -616,17 +469,16 @@ impl TaskClassifier {
                 name: "Customer Service Representatives".into(),
                 hourly_wage: 44.41,
                 category: LegalMediaOperations,
-                keywords: vec!["customer service", "support", "helpdesk", "ticket", "chat"],
+                keywords: vec![
+                    "customer service", "support", "helpdesk", "ticket", "chat",
+                ],
             },
             Occupation {
                 name: "Private Detectives and Investigators".into(),
                 hourly_wage: 37.87,
                 category: LegalMediaOperations,
                 keywords: vec![
-                    "detective",
-                    "investigator",
-                    "background check",
-                    "surveillance",
+                    "detective", "investigator", "background check", "surveillance",
                 ],
             },
             Occupation {
@@ -673,27 +525,26 @@ impl TaskClassifier {
             .map(|(&idx, &score)| (idx, score))
             .unwrap_or((usize::MAX, 0.0));
 
-        let (occupation, hourly_wage, category, confidence, reasoning) =
-            if best_idx < self.occupations.len() {
-                let occ = &self.occupations[best_idx];
-                let confidence = (best_score / 3.0).min(1.0); // Normalize confidence
-                (
-                    occ.name.clone(),
-                    occ.hourly_wage,
-                    occ.category,
-                    confidence,
-                    format!("Matched {} keywords", best_score as i32),
-                )
-            } else {
-                // Fallback
-                (
-                    self.fallback_occupation.clone(),
-                    self.fallback_wage,
-                    OccupationCategory::BusinessFinance,
-                    0.3,
-                    "Fallback classification - no strong keyword match".to_string(),
-                )
-            };
+        let (occupation, hourly_wage, category, confidence, reasoning) = if best_idx < self.occupations.len() {
+            let occ = &self.occupations[best_idx];
+            let confidence = (best_score / 3.0).min(1.0); // Normalize confidence
+            (
+                occ.name.clone(),
+                occ.hourly_wage,
+                occ.category,
+                confidence,
+                format!("Matched {} keywords", best_score as i32),
+            )
+        } else {
+            // Fallback
+            (
+                self.fallback_occupation.clone(),
+                self.fallback_wage,
+                OccupationCategory::BusinessFinance,
+                0.3,
+                "Fallback classification - no strong keyword match".to_string(),
+            )
+        };
 
         let estimated_hours = Self::estimate_hours(instruction);
         let max_payment = (estimated_hours * hourly_wage * 100.0).round() / 100.0;
@@ -786,9 +637,9 @@ impl TaskClassifier {
         }
 
         // Substring match
-        self.occupations.iter().find(|o| {
-            lower.contains(&o.name.to_lowercase()) || o.name.to_lowercase().contains(&lower)
-        })
+        self.occupations
+            .iter()
+            .find(|o| lower.contains(&o.name.to_lowercase()) || o.name.to_lowercase().contains(&lower))
     }
 }
 
@@ -818,7 +669,8 @@ mod tests {
         let result = classifier.classify("Prepare quarterly financial statements and audit trail");
 
         assert!(
-            result.occupation.contains("Account") || result.occupation.contains("Financial"),
+            result.occupation.contains("Account")
+                || result.occupation.contains("Financial"),
             "Expected finance occupation, got: {}",
             result.occupation
         );
